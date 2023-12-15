@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Pharmacy</string>
+    <string name="title_activity_admin">AdminActivity</string>
+    <string-array name="tableListAdminCrudInsert">
+        <item>employee</item>
+        <item>employee_store</item>
+        <item>medicine</item>
+        <item>medicine_category</item>
+        <item>medicine_check</item>
+        <item>store_medicine</item>
+        <item>position_name</item>
+    </string-array>
+    <string-array name="tableListAdminCrudUpdate">
+        <item>employee</item>
+        <item>employee_store</item>
+        <item>medicine</item>
+        <item>medicine_category</item>
+        <item>store_medicine</item>
+        <item>position_name</item>
+    </string-array>
+    <string-array name="tableListAdminCrudDelete">
+        <item>employee</item>
+        <item>employee_store</item>
+        <item>medicine_category</item>
+        <item>position_name</item>
+    </string-array>
+    <string-array name="tableListAdminTableView">
+        <item>employee</item>
+        <item>employee_store</item>
+        <item>drug_store</item>
+        <item>medicine</item>
+        <item>medicine_category</item>
+        <item>medicine_check</item>
+        <item>medicine_statistic</item>
+        <item>medicine_unit</item>
+        <item>store_medicine</item>
+        <item>position_name</item>
+    </string-array>
+</resources>
