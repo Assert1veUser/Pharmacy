@@ -1,4 +1,4 @@
-package com.example.pharmacy.Admin;
+package com.example.pharmacy.Admin.CRUD;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,7 +17,6 @@ import com.example.pharmacy.R;
 import com.example.pharmacy.databinding.ActivityUpdateAdminBinding;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

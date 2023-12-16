@@ -1,4 +1,4 @@
-package com.example.pharmacy.Admin;
+package com.example.pharmacy.Admin.CRUD;
 
 import android.content.Intent;
 import android.os.Bundle;

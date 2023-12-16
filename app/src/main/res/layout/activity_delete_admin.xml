@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/tittle"
     android:padding="20dp"
-    tools:context=".Admin.DeleteAdminActivity">
+    tools:context=".Admin.CRUD.DeleteAdminActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayoutDelete"

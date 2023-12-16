@@ -1,4 +1,4 @@
-package com.example.pharmacy.Admin;
+package com.example.pharmacy.Admin.CRUD;
 
 import androidx.appcompat.app.AppCompatActivity;
 

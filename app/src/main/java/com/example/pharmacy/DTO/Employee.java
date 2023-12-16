@@ -1,6 +1,8 @@
 package com.example.pharmacy.DTO;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Employee {
     private String name;
@@ -66,4 +68,5 @@ public class Employee {
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
+
 }

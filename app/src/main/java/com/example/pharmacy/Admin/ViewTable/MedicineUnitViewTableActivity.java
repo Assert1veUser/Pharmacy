@@ -1,4 +1,4 @@
-package com.example.pharmacy.Admin;
+package com.example.pharmacy.Admin.ViewTable;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.pharmacy.R;
 
-public class EmployeeStoreViewTableActivity extends AppCompatActivity {
+public class MedicineUnitViewTableActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_employee_store_view_table);
+        setContentView(R.layout.activity_medicine_unit_view_table);
     }
 }

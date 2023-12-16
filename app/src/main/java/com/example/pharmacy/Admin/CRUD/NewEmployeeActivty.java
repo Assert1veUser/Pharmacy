@@ -1,4 +1,4 @@
-package com.example.pharmacy.Admin;
+package com.example.pharmacy.Admin.CRUD;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.pharmacy.R;
-import com.example.pharmacy.databinding.ActivityMainBinding;
 import com.example.pharmacy.databinding.ActivityNewEmployeeActivtyBinding;
 import com.google.android.material.chip.Chip;
 

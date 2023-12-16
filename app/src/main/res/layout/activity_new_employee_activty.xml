@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/tittle"
-    tools:context=".Admin.NewEmployeeActivty">
+    tools:context=".Admin.CRUD.NewEmployeeActivty">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayoutNewEmployeeAdd"

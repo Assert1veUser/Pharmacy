@@ -6,13 +6,13 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.pharmacy.MainActivity;
+import com.example.pharmacy.Admin.CRUD.CrudAdminActivity;
+import com.example.pharmacy.Admin.CRUD.NewEmployeeActivty;
 import com.example.pharmacy.databinding.ActivityAdminBinding;
 import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.base.Joiner;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;

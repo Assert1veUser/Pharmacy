@@ -1,4 +1,4 @@
-package com.example.pharmacy.Admin;
+package com.example.pharmacy.Admin.CRUD;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,16 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.pharmacy.R;
 import com.example.pharmacy.databinding.ActivityDeleteAdminBinding;
-import com.example.pharmacy.databinding.ActivityUpdateAdminBinding;
-
-import org.postgresql.replication.PGReplicationConnectionImpl;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 public class DeleteAdminActivity extends AppCompatActivity {
 
