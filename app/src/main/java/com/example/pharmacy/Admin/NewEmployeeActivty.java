@@ -1,4 +1,4 @@
-package com.example.pharmacy.Admin.CRUD;
+package com.example.pharmacy.Admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,7 @@ import com.google.android.material.chip.Chip;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.List;
@@ -50,12 +51,12 @@ public class NewEmployeeActivty extends AppCompatActivity {
                                                 ipAddress + ":5432/pharmacy",
                                         loginGet,
                                         passwordGet);
-                                Statement statement = connection.createStatement();
+                                PreparedStatement preparedStatement = connection.prepareStatement("SELECT create_admin(?, ?);");
                                 System.out.println("DataBase start");
-                                ResultSet resultSet = statement.executeQuery("SELECT create_admin" +
-                                        "(" + binding.editTextStoreIdNewEmployee.getText().toString() + ", " +
-                                        binding.editTextEmployeeIdNewEmployee.getText().toString() + ");");
+                                preparedStatement.setInt(1, Integer.parseInt(binding.editTextStoreIdNewEmployee.getText().toString()));
+                                preparedStatement.setInt(2, Integer.parseInt(binding.editTextEmployeeIdNewEmployee.getText().toString()));
                                 String newEmployeeData = "";
+                                ResultSet resultSet = preparedStatement.executeQuery();
                                 while (resultSet.next()) {
                                     newEmployeeData = resultSet.getString("create_admin");
                                 }
@@ -63,7 +64,7 @@ public class NewEmployeeActivty extends AppCompatActivity {
                                 loginNewEmployee = log[0].substring(1);
                                 passwordNewEmployee = log[1].substring(0, log[1].length() - 1);
                                 resultSet.close();
-                                statement.close();
+                                preparedStatement.close();
                                 connection.close();
                             } catch (Exception e) {
                                 e.printStackTrace();
@@ -89,12 +90,12 @@ public class NewEmployeeActivty extends AppCompatActivity {
                                                 ipAddress + ":5432/pharmacy",
                                         loginGet,
                                         passwordGet);
-                                Statement statement = connection.createStatement();
+                                PreparedStatement preparedStatement = connection.prepareStatement("SELECT create_pharmacist(?, ?);");
                                 System.out.println("DataBase start");
-                                ResultSet resultSet = statement.executeQuery("SELECT create_pharmacist" +
-                                        "(" + binding.editTextStoreIdNewEmployee.getText().toString() + ", " +
-                                        binding.editTextEmployeeIdNewEmployee.getText().toString() + ");");
+                                preparedStatement.setInt(1, Integer.parseInt(binding.editTextStoreIdNewEmployee.getText().toString()));
+                                preparedStatement.setInt(2, Integer.parseInt(binding.editTextEmployeeIdNewEmployee.getText().toString()));
                                 String newEmployeeData = "";
+                                ResultSet resultSet = preparedStatement.executeQuery();
                                 while (resultSet.next()) {
                                     newEmployeeData = resultSet.getString("create_pharmacist");
                                 }
@@ -105,7 +106,7 @@ public class NewEmployeeActivty extends AppCompatActivity {
                                 System.out.println(log[0]);
                                 System.out.println(log[1]);
                                 resultSet.close();
-                                statement.close();
+                                preparedStatement.close();
                                 connection.close();
                             } catch (Exception e) {
                                 e.printStackTrace();

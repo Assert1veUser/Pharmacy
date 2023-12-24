@@ -278,9 +278,9 @@ public class InsertAdminActivity extends AppCompatActivity {
                                 .getText().toString()));
                         countMedicine.add(Integer.parseInt(binding.editTextInsertCheckMedicineCount
                                 .getText().toString()));
-                        binding.editTextInsertCheckMidicineId.setText("");
-                        binding.editTextInsertCheckMedicineCount.setText("");
-                        binding.editTextInsertCheckStoreId.setText("");
+//                        binding.editTextInsertCheckMidicineId.setText("");
+//                        binding.editTextInsertCheckMedicineCount.setText("");
+//                        binding.editTextInsertCheckStoreId.setText("");
                         binding.butInsert.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {

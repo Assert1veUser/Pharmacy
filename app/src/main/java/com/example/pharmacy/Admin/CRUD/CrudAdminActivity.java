@@ -27,6 +27,7 @@ public class CrudAdminActivity extends AppCompatActivity {
         String loginGet = intentGet.getStringExtra("login");
         String passwordGet = intentGet.getStringExtra("password");
         String ipAddress = intentGet.getStringExtra("ipAddress");
+        String storeId = intentGet.getStringExtra("store_id");
         ArrayAdapter<?> adapterInsert =
                 ArrayAdapter.createFromResource(this, R.array.tableListAdminCrudInsert,
                         android.R.layout.simple_spinner_item);
@@ -99,6 +100,7 @@ public class CrudAdminActivity extends AppCompatActivity {
                     intent.putExtra("password", passwordGet);
                     intent.putExtra("ipAddress", ipAddress);
                     intent.putExtra("crudTable", binding.spinnerAdminCrudElementUpdate.getSelectedItem().toString());
+                    intent.putExtra("store_id", storeId);
                     startActivity(intent);
                 } else if (chipCheck.equals("Удалить")) {
                     binding.spinnerAdminCrudElementInsert.setVisibility(View.GONE);
@@ -109,6 +111,7 @@ public class CrudAdminActivity extends AppCompatActivity {
                     intent.putExtra("password", passwordGet);
                     intent.putExtra("ipAddress", ipAddress);
                     intent.putExtra("crudTable", binding.spinnerAdminCrudElementDelete.getSelectedItem().toString());
+                    intent.putExtra("store_id", storeId);
                     startActivity(intent);
                 }else {
                     Toast.makeText(CrudAdminActivity.this, "Выберите действие", Toast.LENGTH_SHORT).show();

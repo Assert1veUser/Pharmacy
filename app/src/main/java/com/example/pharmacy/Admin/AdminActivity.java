@@ -7,7 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pharmacy.Admin.CRUD.CrudAdminActivity;
-import com.example.pharmacy.Admin.CRUD.NewEmployeeActivty;
+import com.example.pharmacy.Admin.ViewTable.ViewTableActivity;
 import com.example.pharmacy.databinding.ActivityAdminBinding;
 import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.base.Joiner;
 
@@ -112,6 +112,18 @@ public class AdminActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     Intent intent = new Intent(AdminActivity.this,
                             CrudAdminActivity.class);
+                    intent.putExtra("login", loginGet);
+                    intent.putExtra("password", passwordGet);
+                    intent.putExtra("ipAddress", ipAddress);
+                    intent.putExtra("store_id", storeId);
+                    startActivity(intent);
+                }
+            });
+            binding.butAllTableCheck.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(AdminActivity.this,
+                            ViewTableActivity.class);
                     intent.putExtra("login", loginGet);
                     intent.putExtra("password", passwordGet);
                     intent.putExtra("ipAddress", ipAddress);

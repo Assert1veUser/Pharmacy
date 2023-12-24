@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.pharmacy.Admin.AdminActivity;
+import com.example.pharmacy.Pharmacist.PharmacistActivity;
 import com.example.pharmacy.databinding.ActivityMainBinding;
 
 import java.sql.Connection;
@@ -50,28 +51,18 @@ public class MainActivity extends AppCompatActivity {
                                 intent.putExtra("employeeId", employeeNChars(binding
                                         .editTextLogin.getText().toString()).get(1));
                                 startActivity(intent);
-//                            } else if (firstNChars(binding.editTextLogin.getText().toString(), 2)
-//                                    .equals("an")) {
-//                                Intent intent = new Intent(StartActivity.this,
-//                                        AnalystActivity.class);
-//                                intent.putExtra("login", binding.editTextLogin.getText()
-//                                        .toString());
-//                                intent.putExtra("password", binding.editTextPassword.getText()
-//                                        .toString());
-//                                startActivity(intent);
-//                            } else if(firstNChars(binding.editTextLogin.getText().toString(), 2)
-//                                    .equals("ma")){
-//                                Intent intent = new Intent(StartActivity.this,
-//                                        ManagerActivity.class);
-//                                intent.putExtra("login", binding.editTextLogin.getText()
-//                                        .toString());
-//                                intent.putExtra("password", binding.editTextPassword.getText()
-//                                        .toString());
+                            } else if (firstNChars(binding.editTextLogin.getText().toString(), 2)
+                                    .equals("ph")) {
+                                Intent intent = new Intent(MainActivity.this,
+                                        PharmacistActivity.class);
+                                intent.putExtra("login", binding.editTextLogin.getText()
+                                        .toString());
+                                intent.putExtra("password", binding.editTextPassword.getText()
+                                        .toString());
+                                intent.putExtra("ipAddress", ipAddress);
                                 startActivity(intent);
                             }
-
                             connection.close();
-
                         } catch (Exception e) {
                             e.printStackTrace();
                         }

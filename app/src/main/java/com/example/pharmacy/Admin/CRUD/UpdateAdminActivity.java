@@ -26,9 +26,7 @@ public class UpdateAdminActivity extends AppCompatActivity {
     private ActivityUpdateAdminBinding binding;
     private String resultInsert;
     private Integer searchData;
-    private String searchDataEmployeeStore;
-    private Integer searchDataEmployeeStoreStoreId;
-    private Integer searchDataEmployeeStoreEmployeeId;
+    private Integer employeeId;
     private Employee employee = new Employee();
     private EmployeeStore employeeStore = new EmployeeStore();
     private Medicine medicine = new Medicine();
@@ -47,6 +45,7 @@ public class UpdateAdminActivity extends AppCompatActivity {
         String passwordGet = intentGet.getStringExtra("password");
         String ipAddress = intentGet.getStringExtra("ipAddress");
         String crudTable = intentGet.getStringExtra("crudTable");
+        String storeId = intentGet.getStringExtra("store_id");
         if (crudTable.equals("employee")) {
             binding.butUpdateSearchDataInformation.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -172,10 +171,6 @@ public class UpdateAdminActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     if (!binding.editTextUpdateSearchDataInformation.getText().toString().equals("")){
-                        searchDataEmployeeStore = binding.editTextUpdateSearchDataInformation.getText().toString();
-                        String[] parts = searchDataEmployeeStore.split(",");
-                        searchDataEmployeeStoreStoreId = Integer.parseInt(parts[0]);
-                        searchDataEmployeeStoreEmployeeId = Integer.parseInt(parts[1]);
                         Thread gfgThread = new Thread(new Runnable() {
                             @Override
                             public void run() {
@@ -186,8 +181,9 @@ public class UpdateAdminActivity extends AppCompatActivity {
                                     PreparedStatement preparedStatement = connection.prepareStatement(
                                             "SELECT * FROM employee_store WHERE store_id = ? AND employee_id = ?;");
                                     System.out.println("DataBase start");
-                                    preparedStatement.setInt(1, searchDataEmployeeStoreStoreId);
-                                    preparedStatement.setInt(2, searchDataEmployeeStoreEmployeeId);
+                                    employeeId = Integer.parseInt(binding.editTextUpdateSearchDataInformation.getText().toString());
+                                    preparedStatement.setInt(1, Integer.parseInt(storeId));
+                                    preparedStatement.setInt(2, Integer.parseInt(binding.editTextUpdateSearchDataInformation.getText().toString()));
                                     ResultSet resultSet = preparedStatement.executeQuery();
                                     while (resultSet.next()) {
                                         employeeStore.setSalary(resultSet.getFloat("salary"));
@@ -237,8 +233,8 @@ public class UpdateAdminActivity extends AppCompatActivity {
                                                 preparedStatement.setFloat(1, Float.parseFloat(binding.editTextUpdateEmployeeStoreSalary.getText().toString()));
                                                 preparedStatement.setDate(2, java.sql.Date.valueOf(binding.editTextUpdateEmployeeStoreHireDate.getText().toString()));
                                                 preparedStatement.setInt(3, Integer.parseInt(binding.editTextUpdateEmployeeStorePostionId.getText().toString()));
-                                                preparedStatement.setInt(4, searchDataEmployeeStoreStoreId);
-                                                preparedStatement.setInt(5, searchDataEmployeeStoreEmployeeId);
+                                                preparedStatement.setInt(4, Integer.parseInt(storeId));
+                                                preparedStatement.setInt(5, employeeId);
                                                 preparedStatement.executeUpdate();
                                                 preparedStatement.close();
                                                 connection.close();

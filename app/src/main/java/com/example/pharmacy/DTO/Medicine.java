@@ -1,6 +1,7 @@
 package com.example.pharmacy.DTO;
 
 public class Medicine {
+    private Integer vendorCode;
     private String name;
     private Integer categoryId;
     private String ManufactureCountry;
@@ -9,6 +10,18 @@ public class Medicine {
     private Boolean prescription;
     private String description;
     private Integer expirationDate;
+
+
+    public Medicine(int vendorCode, String name) {
+    }
+
+    public Integer getVendorCode() {
+        return vendorCode;
+    }
+
+    public void setVendorCode(Integer vendorCode) {
+        this.vendorCode = vendorCode;
+    }
 
     public String getName() {
         return name;
@@ -71,6 +84,21 @@ public class Medicine {
     }
 
     public void setExpirationDate(Integer expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+    public Medicine() {
+    }
+
+    public Medicine(Integer vendorCode, String name, Integer categoryId, String manufactureCountry, String manufactureCompany, Integer countInPackage, Boolean prescription, String description, Integer expirationDate) {
+        this.vendorCode = vendorCode;
+        this.name = name;
+        this.categoryId = categoryId;
+        this.ManufactureCountry = manufactureCountry;
+        this.ManufactureCompany = manufactureCompany;
+        this.countInPackage = countInPackage;
+        this.prescription = prescription;
+        this.description = description;
         this.expirationDate = expirationDate;
     }
 }
